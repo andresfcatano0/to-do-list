@@ -1,6 +1,14 @@
 let button = document.querySelector("#enter");
 let userInput = document.querySelector("#userInput");
 let ul = document.querySelector("ul");
+// let li = document.querySelectorAll("li");
+
+// for (let i = 0; i < li.length; i++){
+// 	li[i].addEventListener("click", function(event) {
+// 		event.target.classList.toggle("done");
+// 	});
+// }
+
 
 function createLi(){
 	let li = document.createElement("li");
@@ -22,9 +30,13 @@ userInput.addEventListener("keypress", function(event) {
 })
 
 
+function done(item){
+	//For HTML documents, the returned tag name is always upper-case.
+	if (item.target.tagName === "LI"){
+		item.target.classList.toggle("done");
+	}
+}
 
-// let lis = document.querySelectorAll("li")
+ul.addEventListener("click", done);
 
-// lis.addEventListener("click", function() {
-// 	lis.classList.toggle("done")
-// });
+
