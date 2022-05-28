@@ -4,6 +4,14 @@ body {
 	background: linear-gradient(to right, rgb(0, 42, 255), rgb(255, 0, 0));
 }
 
+#container {
+	text-align: center;
+	width: 400px;
+	/*By assigning auto, the available horizontal space in the element's 
+	container is distributed equally – and thus the element gets centered*/
+	margin: 100px auto;
+}
+
 h1 {
 	text-transform: uppercase;
 	font-size: 40px;
@@ -40,14 +48,6 @@ button {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 5px;
-}
-
-#container {
-	text-align: center;
-	width: 400px;
-	/*By assigning auto, the available horizontal space in the element's 
-	container is distributed equally – and thus the element gets centered*/
-	margin: 100px auto;
 }
 
 .fas {
