@@ -1,18 +1,11 @@
 let button = document.querySelector("#enter");
 let userInput = document.querySelector("#userInput");
 let ul = document.querySelector("ul");
-// let li = document.querySelectorAll("li");
-
-// for (let i = 0; i < li.length; i++){
-// 	li[i].addEventListener("click", function(event) {
-// 		event.target.classList.toggle("done");
-// 	});
-// }
-
+let i = document.querySelectorAll("i");
 
 function createLi(){
 	let li = document.createElement("li");
-	li.innerHTML = (`${userInput.value}`);
+	li.innerHTML = (`<i class="fas fa-trash-alt"></i> ${userInput.value}`);
 	ul.appendChild(li);
 	userInput.value = "";
 }
@@ -29,14 +22,25 @@ userInput.addEventListener("keypress", function(event) {
 	}
 })
 
-
-function done(item){
+function cross(item){
 	//For HTML documents, the returned tag name is always upper-case.
 	if (item.target.tagName === "LI"){
-		item.target.classList.toggle("done");
+		item.target.classList.toggle("cross");
 	}
 }
 
-ul.addEventListener("click", done);
+function trash(item) {
+	if (item.target.tagName === "I"){
+		item.target.parentElement.remove();
+	}
+}
+
+function ulEvents(item){
+	trash(item);
+	cross(item);
+}
+
+ul.addEventListener("click", ulEvents);
+
 
 
