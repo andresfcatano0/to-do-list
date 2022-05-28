@@ -17,6 +17,7 @@ button.addEventListener("click", function() {
 })
 
 userInput.addEventListener("keypress", function(event) {
+	//event.which === 13, refers to the "return" key.
 	if (userInput.value.length > 0 && event.which === 13) {
 		createLi();
 	}
@@ -25,17 +26,21 @@ userInput.addEventListener("keypress", function(event) {
 const cross = (item) => {
 	//For HTML documents, the returned tag name is always upper-case.
 	if (item.target.tagName === "LI"){
+		//The .target element is used in order to implement event delegation.
+		//.target refers to the clicked li element. 
 		item.target.classList.toggle("cross");
 	}
 }
 
 const trash = (item) => {
+	//.target in this case "I", refers to the trash can icon.
 	if (item.target.tagName === "I"){
 		item.target.parentElement.remove();
 	}
 }
 
 const ulEvents = (item) => {
+	//This function contain both the strikethrough and delete event listeners.
 	trash(item);
 	cross(item);
 }
