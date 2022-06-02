@@ -12,6 +12,18 @@ body {
 	margin: 100px auto;
 }
 
+#userInput {
+	background-color: rgba(255, 255, 255, 0.3);
+	color: white;
+	outline: none;
+	font-size: 1.5em;
+	/*opacity: 0.5;*/
+}
+
+::placeholder {
+	color: white;
+}
+
 h1 {
 	text-transform: uppercase;
 	font-size: 40px;
@@ -28,16 +40,13 @@ input {
 	font-size: 18px;
 	height: 40px;
 	line-height: 40px;
+	border: 0px none;
 	/*border-box tells the browser to account for any border and 
 	padding in the values you specify. If you set an element's 
 	width to 100 pixels, that 100 pixels will include any 
 	border or padding you added, and the content box will 
 	shrink to absorb that extra width.*/
 	box-sizing: border-box;
-}
-
-input:focus {
-	outline: none;
 }
 
 button {
@@ -48,10 +57,12 @@ button {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 5px;
+	border-radius: 8px;
+	border: 0px none;
 }
 
 .fas {
-	color: red;
+	color: rgb(255, 150, 150);
 }
 
 .cross {
@@ -67,8 +78,10 @@ ul {
 }
 
 li {
-	background-color: white;
-	font-size: 18px;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: white;
+	outline: none;
+	font-size: 1.5em;
 	/*Combining height and line-height to 40px 
 	increases line height and centers the text*/
 	height: 40px;
@@ -77,7 +90,7 @@ li {
 
 /* Selects the second element in a list if that element is a <li> */
 li:nth-child(2n) {
-	background-color: #f7f7f7;
+	background-color: rgba(200, 200, 200, 0.3);
 }
 
 
